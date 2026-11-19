@@ -1,0 +1,10 @@
+services:
+  bot:
+    build: ./backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    env_file:
+      - path: .env
+        required: false
+    command: ["python", "-m", "analysis.account_report"]
